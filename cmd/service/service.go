@@ -1,7 +1,6 @@
 package service
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -39,42 +38,11 @@ func init() {
 	log.Println("Load the conf file:", envConf)
 }
 
-func setSttings(settings *setting.Setting) {
-	if err := settings.ReadSection("Server", &global.ServerSetting); err != nil {
-		log.Fatalf("init.setupLogger err：%s", color.Coat(err.Error(), color.Red))
-	}
-	//if err := settings.ReadSection("Database", &global.DatabaseSetting);err != nil {
-	//	log.Fatalf("init.setupLogger err：%s", color.Coat(err.Error(), color.Red))
-	//}
-	//if err := settings.ReadSection("Logger", &global.LoggerSetting);err != nil {
-	//	log.Fatalf("init.setupLogger err：%s", color.Coat(err.Error(), color.Red))
-	//}
-	//if err := settings.ReadSection("App", &global.AppSetting);err != nil {
-	//	log.Fatalf("init.setupLogger err：%s", color.Coat(err.Error(), color.Red))
-	//}
-	//if err := settings.ReadSection("JWT", &global.JwtSetting);err != nil {
-	//	log.Fatalf("init.setupLogger err：%s", color.Coat(err.Error(), color.Red))
-	//}
-	//if err := settings.ReadSection("Email", &global.EmailSetting);err != nil {
-	//	log.Fatalf("init.setupLogger err：%s", color.Coat(err.Error(), color.Red))
-	//}
-	//if err := settings.ReadSection("Tracer", &global.TracerSetting);err != nil {
-	//	log.Fatalf("init.setupLogger err：%s", color.Coat(err.Error(), color.Red))
-	//}
-	//if err := settings.ReadSection("Sms", &global.SmsSetting);err != nil {
-	//	log.Fatalf("init.setupLogger err：%s", color.Coat(err.Error(), color.Red))
-	//}
-}
-
 func setup() {
 	// 初始化配置
-	settings, err := setting.NewSetting(strings.Split(envConf, ".")...)
-	if err != nil {
+	if err := setting.NewSetting(strings.Split(envConf, ".")...); err != nil {
 		log.Fatalf("init.setupSetting err：%s", color.Coat(err.Error(), color.Red))
 	}
-	setSttings(settings)
-
-	fmt.Println(settings)
 	log.Println("Configuration initialization successfully...")
 
 	// 初始化日志

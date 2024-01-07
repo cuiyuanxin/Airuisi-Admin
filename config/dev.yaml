@@ -1,0 +1,6 @@
+Server:
+  Mode: debug #debug or release or test
+  HttpAddr: 0.0.0.0
+  HttpPort: 8080
+  ReadTimeout: 600
+  WriteTimeout: 600

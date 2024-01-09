@@ -4,8 +4,9 @@ import "github.com/cuiyuanxin/airuisi-admin/pkg/setting"
 
 var (
 	ServerSetting *setting.Server
+	LoggerSetting *setting.Logger
 	//RdbSetting        *setting.Rdb
-	//LoggerSetting   *setting.Logger
+
 	//TracerSetting   *setting.Tracer
 	//DatabaseSetting *setting.Database
 	//EmailSetting      *setting.Email

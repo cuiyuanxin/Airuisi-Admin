@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/cuiyuanxin/airuisi-admin/cmd/service"
+	"github.com/cuiyuanxin/airuisi-admin/cmd/server"
 
 	"github.com/cuiyuanxin/airuisi-admin/cmd/version"
 
@@ -40,7 +40,7 @@ var rootCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(service.Cmd)
+	rootCmd.AddCommand(server.Cmd)
 	rootCmd.AddCommand(version.Cmd)
 }
 

@@ -1,22 +1,24 @@
 package setting
 
+import "time"
+
 // 服务地址和端口
 type Server struct {
-	Mode string `mapstructure:"Mode"`
-	//HttpAddr     string        `mapstructure:"HttpAddr"`
-	//HttpPort     string        `mapstructure:"HttpPort"`
-	//ReadTimeout  time.Duration `mapstructure:"ReadTimeout"`
-	//WriteTimeout time.Duration `mapstructure:"WriteTimeout"`
+	Mode         string        `mapstructure:"Mode"`
+	Addr         string        `mapstructure:"Addr"`
+	Port         string        `mapstructure:"Port"`
+	ReadTimeout  time.Duration `mapstructure:"ReadTimeout"`
+	WriteTimeout time.Duration `mapstructure:"WriteTimeout"`
 }
 
 // 日志配置
 type Logger struct {
-	//Open       bool   `mapstructure:"Open"`
-	//FilePath   string `mapstructure:"FilePath"`
-	//MaxSize    int    `mapstructure:"MaxSize"`
-	//MaxBackups int    `mapstructure:"MaxBackups"`
-	//MaxAge     int    `mapstructure:"MaxAge"`
-	//Compress   bool   `mapstructure:"Compress"`
+	Open       bool   `mapstructure:"Open"`
+	FilePath   string `mapstructure:"FilePath"`
+	MaxSize    int    `mapstructure:"MaxSize"`
+	MaxBackups int    `mapstructure:"MaxBackups"`
+	MaxAge     int    `mapstructure:"MaxAge"`
+	Compress   bool   `mapstructure:"Compress"`
 }
 
 // Tracer
